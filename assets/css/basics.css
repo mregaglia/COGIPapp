@@ -21,3 +21,7 @@ td, th {
   border-style: solid;
   padding: 5px;
 }
+
+.logo {
+  width: 160px;
+}
