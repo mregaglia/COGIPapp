@@ -1,0 +1,23 @@
+label, select, input{
+  width: 150px;
+  display: inline-block;
+  margin: 5px 0;
+}
+
+
+body {
+  font-family: arial, sans-serif;
+}
+
+table, form {
+    border-collapse: collapse;
+    width: 600px;
+    text-align: center;
+}
+
+td, th {
+  border-color: black;
+  border-width: thin;
+  border-style: solid;
+  padding: 5px;
+}

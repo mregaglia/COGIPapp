@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Aug 29, 2018 at 02:20 PM
+-- Generation Time: Sep 04, 2018 at 08:39 AM
 -- Server version: 5.7.21
 -- PHP Version: 7.2.7
 
@@ -11,7 +11,7 @@ SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 --
--- Database: `COGIPapp`
+-- Database: `cogipapp`
 --
 
 -- --------------------------------------------------------
@@ -23,7 +23,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `factures` (
   `id_facture` int(11) NOT NULL,
   `facture_number` int(10) UNSIGNED ZEROFILL DEFAULT NULL,
-  `facture_date` date DEFAULT NULL,
+  `date` date DEFAULT NULL,
   `prestation` varchar(45) DEFAULT NULL,
   `FK_societes` int(11) NOT NULL,
   `FK_personnes` int(11) NOT NULL
@@ -33,7 +33,7 @@ CREATE TABLE `factures` (
 -- Dumping data for table `factures`
 --
 
-INSERT INTO `factures` (`id_facture`, `facture_number`, `facture_date`, `prestation`, `FK_societes`, `FK_personnes`) VALUES
+INSERT INTO `factures` (`id_facture`, `facture_number`, `date`, `prestation`, `FK_societes`, `FK_personnes`) VALUES
 (1, 0000000123, '2017-04-11', 'depannagepc', 1, 1),
 (2, 0000000146, '2017-09-03', 'developpement', 2, 2),
 (3, 0000000158, '2017-11-07', 'developpement', 3, 3),

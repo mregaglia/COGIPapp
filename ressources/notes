@@ -1,0 +1,39 @@
+INSERT INTO `factures`(`facture_number`, `facture_date`, `prestation`) VALUES
+(123, '2017-04-11', 'depannagepc'),
+(146, '2017-09-03', 'developpement'),
+(158, '2017-11-07', 'developpement'),
+(178, '2018-05-07', 'achatmateriel'),
+(192, '2018-04-17', 'electricite'),
+(213, '2018-06-12', 'développement'),
+(245, '2018-05-14', 'développement');
+
+INSERT INTO people (name, Lastname, phonenumber, email) VALUES
+('Ajay', 'Shindei', 000486326497, '2018.Ajay.Shindei@gmail.com'),
+('Massimo', 'Regalgia', 000477586535, '2018.Massimo.Regaglia.com'),
+('Jean', 'Michmuch', 000056331679, '2018.Jean.Michmuch@gmail.com'),
+('Robert', 'Robertson', 000066332146, '2018.Robert.Robertson@gmail.com'),
+('Pika', 'Pikatchuson', 000066666666, 'Pika.pikachuson@gmail.com'),
+('Draco', 'Dracoson', 000077777777, 'Draco.Dracoson@gmail.com'),
+('Liam', 'Carlier', 000486493061, '2016.carlier.Liam@gmail.com');
+
+
+(1, 123, '2017-04-11', 'Technowash', 'depannagepc', 'Dupont'),
+(2, 146, '2017-09-03', 'Infosys', 'developpement', 'Jakson'),
+(3, 158, '2017-11-07', 'Devbase', 'developpement', 'Wang'),
+(4, 178, '2018-05-07', 'Webshop', 'achatmateriel', 'Evelyne'),
+(5, 192, '2018-04-17', 'Elelkpower', 'electricite', 'Powels'),
+(6, 213, '2018-06-12', 'Clothinn', 'développement', 'Samantha'),
+(7, 245, '2018-05-14', 'Rotarionline', 'développement', 'SirAlex');
+
+INSERT INTO `societes`(`society_name`, `society_adress`, `country`, `TVA`, `society_phone`) VALUES
+('Technowash','Rue de la poisse, 23 - 2433 Houla', 'Belgique', '462887469','0455729385'),
+('Infosys','Rue des vilains, 55 - 7086 Bonville', 'Belgique', '735528409','045563789'),
+('Devbase','Rue des enfoirés, 77 - 10556 Goldman', 'France', '838900938','046783987'),
+('Webshop','Rue assynchrone, 20 - 7355 Vardump', 'Italie', '334567679','049076353'),
+('Elelkpower','Avenue de la rue, 134 - 1008 Place', 'France', '624435778','043252678'),
+('Clothinn','Impasse du crime, 98 - 75244 Passetatune', 'Belgique', '937365589','047835356'),
+('Rotarionline','Rue des arnaques, 88 - 87366 Loterie', 'Nigeria', '739083008','048736357');
+
+
+
+SELECT society_name, type FROM societes, type WHERE `FK_type` = 1 AND societes.FK_type = type.id_type

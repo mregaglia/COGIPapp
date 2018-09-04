@@ -1,27 +1,32 @@
 <?php
-//On démarre la session
-session_start();
 
-//On se connecte à MySQL
-mysql_connect('localhost', 'root', '');
-mysql_select_db('tests');
-
-//On inclut le logo du site et le menu
-include 'vues/logo.php';
-include 'vues/menu.php';
-
-//On inclut le contrôleur s'il existe et s'il est spécifié
-if (!empty($_GET['page']) && is_file('controleurs/'.$_GET['page'].'.php'))
-{
-        include 'controleurs/'.$_GET['page'].'.php';
+/*
+if($_GET["page"] == "user"){
+	require "controllers/user.controller.php";
+	userPage();
 }
-else
-{
-        include 'controleurs/accueil.php';
+*/
+
+switch ($_GET["page"]) {
+	case 'fournisseurs':
+		require "controllers/fournisseurs.controller.php";
+		break;
+  case 'clients':
+  	require "controllers/clients.controller.php";
+  	break;
+  case 'detailsociete':
+    require "controllers/detailsociete.controller.php";
+  	break;
+
+
+	default:
+		// afficher la home page
+	echo "Home page";
+		break;
 }
 
-//On inclut le pied de page
-include 'vues/pied.php';
+//contactPage();
 
-//On ferme la connexion à MySQL
-mysql_close();
+
+
+?>
