@@ -1,5 +1,5 @@
 <?php
-// header("location:read.php");
+require 'bd.sql';
 ?>
 <?php
 if (isset ($_POST['button'])) {
@@ -18,7 +18,7 @@ if (isset ($_POST['button'])) {
 	
    $bdd->exec("DELETE FROM factures WHERE id_facture='".$id_facture."'");
    $bdd = new PDO('mysql:host=localhost;dbname=cogipapp;charset=utf8', 'root', '');
-	$req= $bdd->exec('SELECT * FROM factures WHERE id="'.$id.'"');
+	$req= $bdd->exec('SELECT * FROM factures WHERE id_facture="'.$id_facture.'"');
 	$donnees= $req->fetch();
 
 }

@@ -1,3 +1,5 @@
+
+
 <?php
 if (isset ($_POST['button'])){
     try
@@ -10,9 +12,24 @@ if (isset ($_POST['button'])){
     // En cas d'erreur, on affiche un message et on arrête tout
     die('Erreur : '.$e->getMessage());
     }
-   $bdd->exec("INSERT INTO factures (facture_number, date, society_name, prestation,) VALUES('".$_POST['facture_number']."','".$_POST['date']."','".$_POST['society_name']."','".$_POST['prestation']."'");
-    
-
+     $bdd->exec("INSERT INTO
+   	factures (
+   	facture_number, 
+   	date, 
+    prestation,
+    FK_societes,
+    FK_personnes
+    ) 
+    VALUES(
+    '".$_POST['facture_number']."',
+    '".$_POST['date']."',
+    '".$_POST['prestation']."',
+    '".$_POST['FK_societes']."',
+    '".$_POST['FK_personnes']."'
+    )");
+   
+  
+   
 }
 
 
@@ -25,34 +42,32 @@ if (isset ($_POST['button'])){
 	<link rel="stylesheet" href="main.css" media="screen" title="no title" charset="utf-8">
 </head>
 <body>
+	<?php require '../header.php' ; ?>
 	<a href="../vues/read.php">Facturation</a>
 	<h1>Ajouter</h1>
-	<form action="" method="post">
+	<form action="#" method="post">
 		<div>
 			<label for="facture_number">Numéro de facture</label>
-			<input type="text" name="facture_number" value="">
+			<input type="number" name="facture_number" value="">
 		</div>
 		<div>
 			<label for="date">Date</label>
 			<input type="date" name="date" value="">
 		</div>
 		<div>
-			<label for="society_name">Entreprise</label>
-			<input type="text" name="society_name" value="">
-		</div>
-		<div>
 			<label for="prestation">prestation</label>
 			<input type="text" name="prestation" value="">
 		</div>
 		<div>
-			<label for="FK_sFK_personnes">Client</label>
-			<input type="text" name="FK_personnes" value="">
+			<label for="FK_societes">Client</label>
+			<input type="number" name="FK_societes" value="">
 		</div>
 		<div>
 			<label for="FK_personnes">Fournisseurs</label>
-			<input type="text" name="FK_personnes" value="">
+			<input type="number" name="FK_personnes" value="">
 		</div>
-        <button type="submit" name="button">Facturer</button>
+        <button type="submit"  name="button">Facturer</button>
 	</form>
 </body>
+<?php require '../footer.php' ; ?>
 </html>

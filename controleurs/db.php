@@ -10,9 +10,8 @@
     die('Erreur : '.$e->getMessage());
     }
     // $resultat = $bdd->query('SELECT * FROM factures');
-    $resultat = $bdd->query('SELECT *,society_name FROM factures, societes');
+    $resultat = $bdd->query('SELECT * FROM factures');
 
-    echo 'Votre message à bien été envoyer';
+    // echo 'Votre message à bien été envoyer';
 
-
- 
+?>
